@@ -1,0 +1,9 @@
+button {
+  cursor: pointer;
+  transition: 0.15s ease-in-out;
+}
+
+button:active {
+  scale: 0.9;
+  opacity: 0.9;
+}
