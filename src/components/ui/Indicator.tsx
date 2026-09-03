@@ -15,9 +15,12 @@ const Indicator = (props: ElementProps) => {
 
         return (
           <li key={index}>
-            <button 
-              className="h-2.5 rounded-full"
-              style={{ background: selected ? "var(--accent)" : "var(--text)", width: selected ? "1.8rem" : "0.6rem", opacity: selected ? "1" : "0.75" }} 
+            <button
+              className="h-2.5 rounded-full shadow"
+              style={{
+                background: selected ? "var(--accent)" : "var(--text)",
+                width: selected ? "1.8rem" : "0.6rem",
+              }}
               onClick={() => {
                 swiper.slideTo(index);
               }}

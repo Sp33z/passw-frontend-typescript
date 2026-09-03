@@ -9,21 +9,22 @@ import {
 type ElementProps = {
   options?: WheelPickerOption[];
   visible?: number;
-}
+};
 
 const WheelSelector = (props: ElementProps) => {
   const { options, visible } = props;
 
-  const wheelOptions: WheelPickerOption[] = options ? options : [{label: "", value: ""}];
+  const wheelOptions: WheelPickerOption[] = options
+    ? options
+    : [{ label: "", value: "" }];
 
   return (
-    <>
-      <WheelPickerWrapper className="w-full h-fit">
+    <div className="w-full h-full relative">
+      <WheelPickerWrapper className="absolute top-1/2 left-1/2 w-fit h-fit -translate-1/2">
         <WheelPicker
           dragSensitivity={2.5}
           scrollSensitivity={2.5}
           optionItemHeight={55}
-          visibleCount={visible || 10}
           options={wheelOptions}
           classNames={{
             highlightWrapper: "bg-(--accent) rounded-xl",
@@ -33,7 +34,7 @@ const WheelSelector = (props: ElementProps) => {
           infinite
         />
       </WheelPickerWrapper>
-    </>
+    </div>
   );
 };
 
